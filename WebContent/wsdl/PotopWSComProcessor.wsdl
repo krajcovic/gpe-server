@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:impl="urn:PotopWSComProcessor" xmlns:intf="urn:PotopWSComProcessor" xmlns:tns2="urn:potopWSComProcessing_v_01_01_xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PotopWSComProcessor">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:potopWSComProcessing_v_01_01_xsd">
+      <simpleType name="tidType">
+        <restriction base="xsd:string">
+          <pattern value="\w+"/>
+          <length value="8"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="transactionIdType">
+        <restriction base="xsd:string">
+          <pattern value="\w+"/>
+          <length value="20"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="amountType">
+        <restriction base="xsd:int">
+          <minExclusive value="0"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="currencyType">
+        <restriction base="xsd:string">
+          <enumeration value="CZK"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="operatorCodeType">
+        <restriction base="xsd:string">
+          <enumeration value="23001"/>
+          <enumeration value="23002"/>
+          <enumeration value="23003"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="msisdnType">
+        <restriction base="xsd:string">
+          <pattern value="\+420\w{9}"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="paymentTypeType">
+        <restriction base="xsd:int">
+          <minInclusive value="1"/>
+          <maxInclusive value="2"/>
+        </restriction>
+      </simpleType>
+      <simpleType name="cancelTypeType">
+        <restriction base="xsd:int">
+          <minInclusive value="0"/>
+          <maxInclusive value="3"/>
+        </restriction>
+      </simpleType>
+
+      <complexType name="ValidationData">
+        <complexContent>
+          <extension base="tns2:AbstractData">
+            <sequence>
+              <element name="transactionId" nillable="true" type="tns2:transactionIdType"/>
+              <element name="amount" type="tns2:amountType"/>
+              <element name="currency" nillable="true" type="tns2:currencyType"/>
+              <element name="operatorCode" type="tns2:operatorCodeType"/>
+              <element name="targetMsisdn" type="tns2:msisdnType"/>
+              <element name="sourceMsisdn" nillable="true" type="tns2:msisdnType"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType abstract="true" name="AbstractData">
+        <sequence>
+          <element name="terminalId" type="tns2:tidType"/>
+          <element name="messageTimestamp" type="xsd:dateTime"/>
+        </sequence>
+      </complexType>
+      <complexType name="ValidationResult">
+        <complexContent>
+          <extension base="tns2:AbstractResult">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+              <element name="taxNo" type="xsd:string"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType abstract="true" name="AbstractResult">
+        <sequence>
+          <element name="terminalId" type="tns2:tidType"/>
+          <element name="messageTimestamp" type="xsd:dateTime"/>
+          <element name="responseCode" type="xsd:int"/>
+          <element name="responseString" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="SubmissionData">
+        <complexContent>
+          <extension base="tns2:AbstractData">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+              <element name="paymentType" nillable="true" type="tns2:paymentTypeType"/>
+              <element name="settlementDate" type="xsd:dateTime"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="SubmissionResult">
+        <complexContent>
+          <extension base="tns2:AbstractResult">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="CancellationData">
+        <complexContent>
+          <extension base="tns2:AbstractData">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+              <element name="cancelType" nillable="true" type="tns2:cancelTypeType"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="CancellationResult">
+        <complexContent>
+          <extension base="tns2:AbstractResult">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="StatusData">
+        <complexContent>
+          <extension base="tns2:AbstractData">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="StatusResult">
+        <complexContent>
+          <extension base="tns2:AbstractResult">
+            <sequence>
+              <element name="transactionId" type="tns2:transactionIdType"/>
+            </sequence>
+          </extension>
+        </complexContent>
+      </complexType>
+    </schema>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PotopWSComProcessor">
+      <import namespace="urn:potopWSComProcessing_v_01_01_xsd"/>
+      <element name="validateResponse">
+        <complexType>
+          <sequence>
+            <element name="validateReturn" type="tns2:ValidationResult"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="submit">
+        <complexType>
+          <sequence>
+            <element name="submissionData" type="tns2:SubmissionData"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="submitResponse">
+        <complexType>
+          <sequence>
+            <element name="submitReturn" type="tns2:SubmissionResult"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancel">
+        <complexType>
+          <sequence>
+            <element name="cancellationData" type="tns2:CancellationData"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="cancelResponse">
+        <complexType>
+          <sequence>
+            <element name="cancelReturn" type="tns2:CancellationResult"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="status">
+        <complexType>
+          <sequence>
+            <element name="statusData" type="tns2:StatusData"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="statusResponse">
+        <complexType>
+          <sequence>
+            <element name="statusReturn" type="tns2:StatusResult"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="echo">
+        <complexType>
+          <sequence/>
+        </complexType>
+      </element>
+      <element name="echoResponse">
+        <complexType>
+          <sequence/>
+        </complexType>
+      </element>
+      <element name="validate">
+        <complexType>
+          <sequence>
+            <element name="validationData" type="tns2:ValidationData"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="echoRequest">
+    <wsdl:part element="impl:echo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelResponse">
+    <wsdl:part element="impl:cancelResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateRequest">
+    <wsdl:part element="impl:validate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitResponse">
+    <wsdl:part element="impl:submitResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="statusRequest">
+    <wsdl:part element="impl:status" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="statusResponse">
+    <wsdl:part element="impl:statusResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="echoResponse">
+    <wsdl:part element="impl:echoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateResponse">
+    <wsdl:part element="impl:validateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitRequest">
+    <wsdl:part element="impl:submit" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelRequest">
+    <wsdl:part element="impl:cancel" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PotopWSComProcessorPort">
+    <wsdl:operation name="validate">
+      <wsdl:input message="impl:validateRequest" name="validateRequest">
+    </wsdl:input>
+      <wsdl:output message="impl:validateResponse" name="validateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submit">
+      <wsdl:input message="impl:submitRequest" name="submitRequest">
+    </wsdl:input>
+      <wsdl:output message="impl:submitResponse" name="submitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancel">
+      <wsdl:input message="impl:cancelRequest" name="cancelRequest">
+    </wsdl:input>
+      <wsdl:output message="impl:cancelResponse" name="cancelResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="status">
+      <wsdl:input message="impl:statusRequest" name="statusRequest">
+    </wsdl:input>
+      <wsdl:output message="impl:statusResponse" name="statusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdl:input message="impl:echoRequest" name="echoRequest">
+    </wsdl:input>
+      <wsdl:output message="impl:echoResponse" name="echoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PotopWSComProcessorSoapBinding" type="impl:PotopWSComProcessorPort">
+<wsaw:UsingAddressing wsdl:required="false"/>
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="validate">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="validateRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submit">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="submitRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancel">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="cancelRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="status">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="statusRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="statusResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="echo">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="echoRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="echoResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PotopWSComProcessingService">
+    <wsdl:port binding="impl:PotopWSComProcessorSoapBinding" name="PotopWSComProcessor">
+      <wsdlsoap:address location="http://localhost:9080/WebServiceProject/services/PotopWSComProcessor"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

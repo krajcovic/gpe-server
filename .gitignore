@@ -1,0 +1,12 @@
+.project
+.classpath
+.settings/
+.springBeans
+META-INF/
+target/
+.~lock.*#
+modules/data/
+webapps/data/
+~*
+.vagrant
+todo.txt

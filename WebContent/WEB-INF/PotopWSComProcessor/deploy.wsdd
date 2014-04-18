@@ -1,0 +1,170 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PotopWSComProcessingService WSDL service -->
+
+  <service name="PotopWSComProcessor" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="urn:PotopWSComProcessor"/>
+      <parameter name="wsdlServiceElement" value="PotopWSComProcessingService"/>
+      <parameter name="schemaUnqualified" value="urn:PotopWSComProcessor,urn:potopWSComProcessing_v_01_01_xsd"/>
+      <parameter name="wsdlServicePort" value="PotopWSComProcessor"/>
+      <parameter name="className" value="PotopWSComProcessor.PotopWSComProcessorSoapBindingSkeleton"/>
+      <parameter name="wsdlPortType" value="PotopWSComProcessorPort"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:CancellationData"
+        type="java:potopWSComProcessing_v_01_01_xsd.CancellationData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:AbstractResult"
+        type="java:potopWSComProcessing_v_01_01_xsd.AbstractResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:ValidationResult"
+        type="java:potopWSComProcessing_v_01_01_xsd.ValidationResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:msisdnType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:amountType"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:tidType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:StatusResult"
+        type="java:potopWSComProcessing_v_01_01_xsd.StatusResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:SubmissionData"
+        type="java:potopWSComProcessing_v_01_01_xsd.SubmissionData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:cancelTypeType"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:paymentTypeType"
+        type="java:int"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:currencyType"
+        type="java:potopWSComProcessing_v_01_01_xsd.CurrencyType"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:CancellationResult"
+        type="java:potopWSComProcessing_v_01_01_xsd.CancellationResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:SubmissionResult"
+        type="java:potopWSComProcessing_v_01_01_xsd.SubmissionResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:transactionIdType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:StatusData"
+        type="java:potopWSComProcessing_v_01_01_xsd.StatusData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:AbstractData"
+        type="java:potopWSComProcessing_v_01_01_xsd.AbstractData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:ValidationData"
+        type="java:potopWSComProcessing_v_01_01_xsd.ValidationData"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        qname="ns:operatorCodeType"
+        type="java:potopWSComProcessing_v_01_01_xsd.OperatorCodeType"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
