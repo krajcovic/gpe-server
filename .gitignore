@@ -10,3 +10,4 @@ webapps/data/
 ~*
 .vagrant
 todo.txt
+bin/
