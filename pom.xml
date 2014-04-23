@@ -200,7 +200,7 @@
 			<url>http://maven.monetplus.cz/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshot</id>
+			<id>snapshots</id>
 			<name>Monet Repository</name>
 			<layout>default</layout>
 			<url>http://maven.monetplus.cz/content/repositories/snapshots/</url>
