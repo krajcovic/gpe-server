@@ -192,22 +192,21 @@
 		</profile>
 	</profiles>
 
-	<repositories>
+	<distributionManagement>
 		<repository>
 			<id>monet</id>
 			<name>Monet Repository</name>
 			<layout>default</layout>
 			<url>http://maven.monetplus.cz/content/groups/public/</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</releases>
 		</repository>
-	</repositories>
+		<snapshotRepository>
+			<id>monet</id>
+			<name>Monet Repository</name>
+			<layout>default</layout>
+			<url>http://maven.monetplus.cz/content/groups/public/</url>
+		</snapshotRepository>
+
+	</distributionManagement>
 
 	<prerequisites>
 		<maven>2.2.1</maven>
