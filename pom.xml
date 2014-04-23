@@ -7,7 +7,11 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>gpe-server</name>
-	<url>http://maven.apache.org</url>
+
+	<scm>
+		<connection>scm:git:ssh://git@git.monetplus.cz:7999/JMVTA/gpe-fake-server.git</connection>
+		<developerConnection>scm:git:ssh://git@git.monetplus.cz:7999/JMVTA/gpe-fake-server.git</developerConnection>
+	</scm>
 
 	<repositories>
 		<repository>
