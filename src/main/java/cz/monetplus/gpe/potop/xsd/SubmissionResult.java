@@ -1,35 +1,35 @@
 /**
- * CancellationData.java
+ * SubmissionResult.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package potopWSComProcessing_v_01_01_xsd;
+package cz.monetplus.gpe.potop.xsd;
 
-public class CancellationData  extends potopWSComProcessing_v_01_01_xsd.AbstractData  implements java.io.Serializable {
+public class SubmissionResult  extends cz.monetplus.gpe.potop.xsd.AbstractResult  implements java.io.Serializable {
     private java.lang.String transactionId;
 
-    private java.lang.Integer cancelType;
-
-    public CancellationData() {
+    public SubmissionResult() {
     }
 
-    public CancellationData(
+    public SubmissionResult(
            java.lang.String terminalId,
            java.util.Calendar messageTimestamp,
-           java.lang.String transactionId,
-           java.lang.Integer cancelType) {
+           int responseCode,
+           java.lang.String responseString,
+           java.lang.String transactionId) {
         super(
             terminalId,
-            messageTimestamp);
+            messageTimestamp,
+            responseCode,
+            responseString);
         this.transactionId = transactionId;
-        this.cancelType = cancelType;
     }
 
 
     /**
-     * Gets the transactionId value for this CancellationData.
+     * Gets the transactionId value for this SubmissionResult.
      * 
      * @return transactionId
      */
@@ -39,7 +39,7 @@ public class CancellationData  extends potopWSComProcessing_v_01_01_xsd.Abstract
 
 
     /**
-     * Sets the transactionId value for this CancellationData.
+     * Sets the transactionId value for this SubmissionResult.
      * 
      * @param transactionId
      */
@@ -47,30 +47,10 @@ public class CancellationData  extends potopWSComProcessing_v_01_01_xsd.Abstract
         this.transactionId = transactionId;
     }
 
-
-    /**
-     * Gets the cancelType value for this CancellationData.
-     * 
-     * @return cancelType
-     */
-    public java.lang.Integer getCancelType() {
-        return cancelType;
-    }
-
-
-    /**
-     * Sets the cancelType value for this CancellationData.
-     * 
-     * @param cancelType
-     */
-    public void setCancelType(java.lang.Integer cancelType) {
-        this.cancelType = cancelType;
-    }
-
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof CancellationData)) return false;
-        CancellationData other = (CancellationData) obj;
+        if (!(obj instanceof SubmissionResult)) return false;
+        SubmissionResult other = (SubmissionResult) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -81,10 +61,7 @@ public class CancellationData  extends potopWSComProcessing_v_01_01_xsd.Abstract
         _equals = super.equals(obj) && 
             ((this.transactionId==null && other.getTransactionId()==null) || 
              (this.transactionId!=null &&
-              this.transactionId.equals(other.getTransactionId()))) &&
-            ((this.cancelType==null && other.getCancelType()==null) || 
-             (this.cancelType!=null &&
-              this.cancelType.equals(other.getCancelType())));
+              this.transactionId.equals(other.getTransactionId())));
         __equalsCalc = null;
         return _equals;
     }
@@ -99,30 +76,21 @@ public class CancellationData  extends potopWSComProcessing_v_01_01_xsd.Abstract
         if (getTransactionId() != null) {
             _hashCode += getTransactionId().hashCode();
         }
-        if (getCancelType() != null) {
-            _hashCode += getCancelType().hashCode();
-        }
         __hashCodeCalc = false;
         return _hashCode;
     }
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(CancellationData.class, true);
+        new org.apache.axis.description.TypeDesc(SubmissionResult.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationData"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "SubmissionResult"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("transactionId");
         elemField.setXmlName(new javax.xml.namespace.QName("", "transactionId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("cancelType");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "cancelType"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

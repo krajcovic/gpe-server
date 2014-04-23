@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package potopWSComProcessing_v_01_01_xsd;
+package cz.monetplus.gpe.potop.xsd;
 
-public class SubmissionData  extends potopWSComProcessing_v_01_01_xsd.AbstractData  implements java.io.Serializable {
+public class SubmissionData  extends cz.monetplus.gpe.potop.xsd.AbstractData  implements java.io.Serializable {
     private java.lang.String transactionId;
 
     private java.lang.Integer paymentType;

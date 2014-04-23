@@ -197,13 +197,13 @@
 			<id>monet</id>
 			<name>Monet Repository</name>
 			<layout>default</layout>
-			<url>http://maven.monetplus.cz/content/repositories/releases/</url>
+			<url>https://maven.monetplus.cz/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
 			<id>monet</id>
 			<name>Monet Repository</name>
 			<layout>default</layout>
-			<url>http://maven.monetplus.cz/content/repositories/snapshots/</url>
+			<url>https://maven.monetplus.cz/content/repositories/snapshots/</url>
 		</snapshotRepository>
 
 	</distributionManagement>

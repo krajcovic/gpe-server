@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package PotopWSComProcessor;
+package cz.monetplus.gpe.potop;
 
-public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.Stub implements PotopWSComProcessor.PotopWSComProcessorPort {
+public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.Stub implements cz.monetplus.gpe.potop.PotopWSComProcessorPort {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -25,10 +25,10 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("validate");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "validationData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "ValidationData"), potopWSComProcessing_v_01_01_xsd.ValidationData.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "validationData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "ValidationData"), cz.monetplus.gpe.potop.xsd.ValidationData.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "ValidationResult"));
-        oper.setReturnClass(potopWSComProcessing_v_01_01_xsd.ValidationResult.class);
+        oper.setReturnClass(cz.monetplus.gpe.potop.xsd.ValidationResult.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "validateReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -36,10 +36,10 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("submit");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "submissionData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "SubmissionData"), potopWSComProcessing_v_01_01_xsd.SubmissionData.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "submissionData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "SubmissionData"), cz.monetplus.gpe.potop.xsd.SubmissionData.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "SubmissionResult"));
-        oper.setReturnClass(potopWSComProcessing_v_01_01_xsd.SubmissionResult.class);
+        oper.setReturnClass(cz.monetplus.gpe.potop.xsd.SubmissionResult.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "submitReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -47,10 +47,10 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("cancel");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cancellationData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationData"), potopWSComProcessing_v_01_01_xsd.CancellationData.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "cancellationData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationData"), cz.monetplus.gpe.potop.xsd.CancellationData.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationResult"));
-        oper.setReturnClass(potopWSComProcessing_v_01_01_xsd.CancellationResult.class);
+        oper.setReturnClass(cz.monetplus.gpe.potop.xsd.CancellationResult.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "cancelReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -58,10 +58,10 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("status");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "statusData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusData"), potopWSComProcessing_v_01_01_xsd.StatusData.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "statusData"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusData"), cz.monetplus.gpe.potop.xsd.StatusData.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusResult"));
-        oper.setReturnClass(potopWSComProcessing_v_01_01_xsd.StatusResult.class);
+        oper.setReturnClass(cz.monetplus.gpe.potop.xsd.StatusResult.class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "statusReturn"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -107,14 +107,14 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "AbstractData");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.AbstractData.class;
+            cls = cz.monetplus.gpe.potop.xsd.AbstractData.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "AbstractResult");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.AbstractResult.class;
+            cls = cz.monetplus.gpe.potop.xsd.AbstractResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -128,14 +128,14 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationData");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.CancellationData.class;
+            cls = cz.monetplus.gpe.potop.xsd.CancellationData.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationResult");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.CancellationResult.class;
+            cls = cz.monetplus.gpe.potop.xsd.CancellationResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -149,7 +149,7 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "currencyType");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.CurrencyType.class;
+            cls = cz.monetplus.gpe.potop.xsd.CurrencyType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
@@ -163,7 +163,7 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "operatorCodeType");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.OperatorCodeType.class;
+            cls = cz.monetplus.gpe.potop.xsd.OperatorCodeType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
@@ -177,28 +177,28 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusData");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.StatusData.class;
+            cls = cz.monetplus.gpe.potop.xsd.StatusData.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusResult");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.StatusResult.class;
+            cls = cz.monetplus.gpe.potop.xsd.StatusResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "SubmissionData");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.SubmissionData.class;
+            cls = cz.monetplus.gpe.potop.xsd.SubmissionData.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "SubmissionResult");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.SubmissionResult.class;
+            cls = cz.monetplus.gpe.potop.xsd.SubmissionResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -219,14 +219,14 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "ValidationData");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.ValidationData.class;
+            cls = cz.monetplus.gpe.potop.xsd.ValidationData.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
             qName = new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "ValidationResult");
             cachedSerQNames.add(qName);
-            cls = potopWSComProcessing_v_01_01_xsd.ValidationResult.class;
+            cls = cz.monetplus.gpe.potop.xsd.ValidationResult.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -297,7 +297,7 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
         }
     }
 
-    public potopWSComProcessing_v_01_01_xsd.ValidationResult validate(potopWSComProcessing_v_01_01_xsd.ValidationData validationData) throws java.rmi.RemoteException {
+    public cz.monetplus.gpe.potop.xsd.ValidationResult validate(cz.monetplus.gpe.potop.xsd.ValidationData validationData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -321,9 +321,9 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (potopWSComProcessing_v_01_01_xsd.ValidationResult) _resp;
+                return (cz.monetplus.gpe.potop.xsd.ValidationResult) _resp;
             } catch (java.lang.Exception _exception) {
-                return (potopWSComProcessing_v_01_01_xsd.ValidationResult) org.apache.axis.utils.JavaUtils.convert(_resp, potopWSComProcessing_v_01_01_xsd.ValidationResult.class);
+                return (cz.monetplus.gpe.potop.xsd.ValidationResult) org.apache.axis.utils.JavaUtils.convert(_resp, cz.monetplus.gpe.potop.xsd.ValidationResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -331,7 +331,7 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public potopWSComProcessing_v_01_01_xsd.SubmissionResult submit(potopWSComProcessing_v_01_01_xsd.SubmissionData submissionData) throws java.rmi.RemoteException {
+    public cz.monetplus.gpe.potop.xsd.SubmissionResult submit(cz.monetplus.gpe.potop.xsd.SubmissionData submissionData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -355,9 +355,9 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (potopWSComProcessing_v_01_01_xsd.SubmissionResult) _resp;
+                return (cz.monetplus.gpe.potop.xsd.SubmissionResult) _resp;
             } catch (java.lang.Exception _exception) {
-                return (potopWSComProcessing_v_01_01_xsd.SubmissionResult) org.apache.axis.utils.JavaUtils.convert(_resp, potopWSComProcessing_v_01_01_xsd.SubmissionResult.class);
+                return (cz.monetplus.gpe.potop.xsd.SubmissionResult) org.apache.axis.utils.JavaUtils.convert(_resp, cz.monetplus.gpe.potop.xsd.SubmissionResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -365,7 +365,7 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public potopWSComProcessing_v_01_01_xsd.CancellationResult cancel(potopWSComProcessing_v_01_01_xsd.CancellationData cancellationData) throws java.rmi.RemoteException {
+    public cz.monetplus.gpe.potop.xsd.CancellationResult cancel(cz.monetplus.gpe.potop.xsd.CancellationData cancellationData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -389,9 +389,9 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (potopWSComProcessing_v_01_01_xsd.CancellationResult) _resp;
+                return (cz.monetplus.gpe.potop.xsd.CancellationResult) _resp;
             } catch (java.lang.Exception _exception) {
-                return (potopWSComProcessing_v_01_01_xsd.CancellationResult) org.apache.axis.utils.JavaUtils.convert(_resp, potopWSComProcessing_v_01_01_xsd.CancellationResult.class);
+                return (cz.monetplus.gpe.potop.xsd.CancellationResult) org.apache.axis.utils.JavaUtils.convert(_resp, cz.monetplus.gpe.potop.xsd.CancellationResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -399,7 +399,7 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
 }
     }
 
-    public potopWSComProcessing_v_01_01_xsd.StatusResult status(potopWSComProcessing_v_01_01_xsd.StatusData statusData) throws java.rmi.RemoteException {
+    public cz.monetplus.gpe.potop.xsd.StatusResult status(cz.monetplus.gpe.potop.xsd.StatusData statusData) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -423,9 +423,9 @@ public class PotopWSComProcessorSoapBindingStub extends org.apache.axis.client.S
         else {
             extractAttachments(_call);
             try {
-                return (potopWSComProcessing_v_01_01_xsd.StatusResult) _resp;
+                return (cz.monetplus.gpe.potop.xsd.StatusResult) _resp;
             } catch (java.lang.Exception _exception) {
-                return (potopWSComProcessing_v_01_01_xsd.StatusResult) org.apache.axis.utils.JavaUtils.convert(_resp, potopWSComProcessing_v_01_01_xsd.StatusResult.class);
+                return (cz.monetplus.gpe.potop.xsd.StatusResult) org.apache.axis.utils.JavaUtils.convert(_resp, cz.monetplus.gpe.potop.xsd.StatusResult.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

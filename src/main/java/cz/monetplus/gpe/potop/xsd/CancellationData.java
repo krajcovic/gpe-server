@@ -1,39 +1,35 @@
 /**
- * ValidationResult.java
+ * CancellationData.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package potopWSComProcessing_v_01_01_xsd;
+package cz.monetplus.gpe.potop.xsd;
 
-public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.AbstractResult  implements java.io.Serializable {
+public class CancellationData  extends cz.monetplus.gpe.potop.xsd.AbstractData  implements java.io.Serializable {
     private java.lang.String transactionId;
 
-    private java.lang.String taxNo;
+    private java.lang.Integer cancelType;
 
-    public ValidationResult() {
+    public CancellationData() {
     }
 
-    public ValidationResult(
+    public CancellationData(
            java.lang.String terminalId,
            java.util.Calendar messageTimestamp,
-           int responseCode,
-           java.lang.String responseString,
            java.lang.String transactionId,
-           java.lang.String taxNo) {
+           java.lang.Integer cancelType) {
         super(
             terminalId,
-            messageTimestamp,
-            responseCode,
-            responseString);
+            messageTimestamp);
         this.transactionId = transactionId;
-        this.taxNo = taxNo;
+        this.cancelType = cancelType;
     }
 
 
     /**
-     * Gets the transactionId value for this ValidationResult.
+     * Gets the transactionId value for this CancellationData.
      * 
      * @return transactionId
      */
@@ -43,7 +39,7 @@ public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.Abstract
 
 
     /**
-     * Sets the transactionId value for this ValidationResult.
+     * Sets the transactionId value for this CancellationData.
      * 
      * @param transactionId
      */
@@ -53,28 +49,28 @@ public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.Abstract
 
 
     /**
-     * Gets the taxNo value for this ValidationResult.
+     * Gets the cancelType value for this CancellationData.
      * 
-     * @return taxNo
+     * @return cancelType
      */
-    public java.lang.String getTaxNo() {
-        return taxNo;
+    public java.lang.Integer getCancelType() {
+        return cancelType;
     }
 
 
     /**
-     * Sets the taxNo value for this ValidationResult.
+     * Sets the cancelType value for this CancellationData.
      * 
-     * @param taxNo
+     * @param cancelType
      */
-    public void setTaxNo(java.lang.String taxNo) {
-        this.taxNo = taxNo;
+    public void setCancelType(java.lang.Integer cancelType) {
+        this.cancelType = cancelType;
     }
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof ValidationResult)) return false;
-        ValidationResult other = (ValidationResult) obj;
+        if (!(obj instanceof CancellationData)) return false;
+        CancellationData other = (CancellationData) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -86,9 +82,9 @@ public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.Abstract
             ((this.transactionId==null && other.getTransactionId()==null) || 
              (this.transactionId!=null &&
               this.transactionId.equals(other.getTransactionId()))) &&
-            ((this.taxNo==null && other.getTaxNo()==null) || 
-             (this.taxNo!=null &&
-              this.taxNo.equals(other.getTaxNo())));
+            ((this.cancelType==null && other.getCancelType()==null) || 
+             (this.cancelType!=null &&
+              this.cancelType.equals(other.getCancelType())));
         __equalsCalc = null;
         return _equals;
     }
@@ -103,8 +99,8 @@ public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.Abstract
         if (getTransactionId() != null) {
             _hashCode += getTransactionId().hashCode();
         }
-        if (getTaxNo() != null) {
-            _hashCode += getTaxNo().hashCode();
+        if (getCancelType() != null) {
+            _hashCode += getCancelType().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -112,10 +108,10 @@ public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.Abstract
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(ValidationResult.class, true);
+        new org.apache.axis.description.TypeDesc(CancellationData.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "ValidationResult"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "CancellationData"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("transactionId");
         elemField.setXmlName(new javax.xml.namespace.QName("", "transactionId"));
@@ -123,10 +119,10 @@ public class ValidationResult  extends potopWSComProcessing_v_01_01_xsd.Abstract
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("taxNo");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "taxNo"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setNillable(false);
+        elemField.setFieldName("cancelType");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "cancelType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
+        elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
 

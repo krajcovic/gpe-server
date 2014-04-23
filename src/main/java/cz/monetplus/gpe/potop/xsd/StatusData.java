@@ -1,35 +1,31 @@
 /**
- * StatusResult.java
+ * StatusData.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package potopWSComProcessing_v_01_01_xsd;
+package cz.monetplus.gpe.potop.xsd;
 
-public class StatusResult  extends potopWSComProcessing_v_01_01_xsd.AbstractResult  implements java.io.Serializable {
+public class StatusData  extends cz.monetplus.gpe.potop.xsd.AbstractData  implements java.io.Serializable {
     private java.lang.String transactionId;
 
-    public StatusResult() {
+    public StatusData() {
     }
 
-    public StatusResult(
+    public StatusData(
            java.lang.String terminalId,
            java.util.Calendar messageTimestamp,
-           int responseCode,
-           java.lang.String responseString,
            java.lang.String transactionId) {
         super(
             terminalId,
-            messageTimestamp,
-            responseCode,
-            responseString);
+            messageTimestamp);
         this.transactionId = transactionId;
     }
 
 
     /**
-     * Gets the transactionId value for this StatusResult.
+     * Gets the transactionId value for this StatusData.
      * 
      * @return transactionId
      */
@@ -39,7 +35,7 @@ public class StatusResult  extends potopWSComProcessing_v_01_01_xsd.AbstractResu
 
 
     /**
-     * Sets the transactionId value for this StatusResult.
+     * Sets the transactionId value for this StatusData.
      * 
      * @param transactionId
      */
@@ -49,8 +45,8 @@ public class StatusResult  extends potopWSComProcessing_v_01_01_xsd.AbstractResu
 
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
-        if (!(obj instanceof StatusResult)) return false;
-        StatusResult other = (StatusResult) obj;
+        if (!(obj instanceof StatusData)) return false;
+        StatusData other = (StatusData) obj;
         if (obj == null) return false;
         if (this == obj) return true;
         if (__equalsCalc != null) {
@@ -82,10 +78,10 @@ public class StatusResult  extends potopWSComProcessing_v_01_01_xsd.AbstractResu
 
     // Type metadata
     private static org.apache.axis.description.TypeDesc typeDesc =
-        new org.apache.axis.description.TypeDesc(StatusResult.class, true);
+        new org.apache.axis.description.TypeDesc(StatusData.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusResult"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("urn:potopWSComProcessing_v_01_01_xsd", "StatusData"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("transactionId");
         elemField.setXmlName(new javax.xml.namespace.QName("", "transactionId"));

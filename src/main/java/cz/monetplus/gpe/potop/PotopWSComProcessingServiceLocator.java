@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package PotopWSComProcessor;
+package cz.monetplus.gpe.potop;
 
-public class PotopWSComProcessingServiceLocator extends org.apache.axis.client.Service implements PotopWSComProcessor.PotopWSComProcessingService {
+public class PotopWSComProcessingServiceLocator extends org.apache.axis.client.Service implements cz.monetplus.gpe.potop.PotopWSComProcessingService {
 
     public PotopWSComProcessingServiceLocator() {
     }
@@ -39,7 +39,7 @@ public class PotopWSComProcessingServiceLocator extends org.apache.axis.client.S
         PotopWSComProcessorWSDDServiceName = name;
     }
 
-    public PotopWSComProcessor.PotopWSComProcessorPort getPotopWSComProcessor() throws javax.xml.rpc.ServiceException {
+    public cz.monetplus.gpe.potop.PotopWSComProcessorPort getPotopWSComProcessor() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(PotopWSComProcessor_address);
@@ -50,9 +50,9 @@ public class PotopWSComProcessingServiceLocator extends org.apache.axis.client.S
         return getPotopWSComProcessor(endpoint);
     }
 
-    public PotopWSComProcessor.PotopWSComProcessorPort getPotopWSComProcessor(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public cz.monetplus.gpe.potop.PotopWSComProcessorPort getPotopWSComProcessor(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            PotopWSComProcessor.PotopWSComProcessorSoapBindingStub _stub = new PotopWSComProcessor.PotopWSComProcessorSoapBindingStub(portAddress, this);
+            cz.monetplus.gpe.potop.PotopWSComProcessorSoapBindingStub _stub = new cz.monetplus.gpe.potop.PotopWSComProcessorSoapBindingStub(portAddress, this);
             _stub.setPortName(getPotopWSComProcessorWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class PotopWSComProcessingServiceLocator extends org.apache.axis.client.S
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (PotopWSComProcessor.PotopWSComProcessorPort.class.isAssignableFrom(serviceEndpointInterface)) {
-                PotopWSComProcessor.PotopWSComProcessorSoapBindingStub _stub = new PotopWSComProcessor.PotopWSComProcessorSoapBindingStub(new java.net.URL(PotopWSComProcessor_address), this);
+            if (cz.monetplus.gpe.potop.PotopWSComProcessorPort.class.isAssignableFrom(serviceEndpointInterface)) {
+                cz.monetplus.gpe.potop.PotopWSComProcessorSoapBindingStub _stub = new cz.monetplus.gpe.potop.PotopWSComProcessorSoapBindingStub(new java.net.URL(PotopWSComProcessor_address), this);
                 _stub.setPortName(getPotopWSComProcessorWSDDServiceName());
                 return _stub;
             }

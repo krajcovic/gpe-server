@@ -5,16 +5,16 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package potopWSComProcessing_v_01_01_xsd;
+package cz.monetplus.gpe.potop.xsd;
 
-public class ValidationData  extends potopWSComProcessing_v_01_01_xsd.AbstractData  implements java.io.Serializable {
+public class ValidationData  extends cz.monetplus.gpe.potop.xsd.AbstractData  implements java.io.Serializable {
     private java.lang.String transactionId;
 
     private int amount;
 
-    private potopWSComProcessing_v_01_01_xsd.CurrencyType currency;
+    private cz.monetplus.gpe.potop.xsd.CurrencyType currency;
 
-    private potopWSComProcessing_v_01_01_xsd.OperatorCodeType operatorCode;
+    private cz.monetplus.gpe.potop.xsd.OperatorCodeType operatorCode;
 
     private java.lang.String targetMsisdn;
 
@@ -28,8 +28,8 @@ public class ValidationData  extends potopWSComProcessing_v_01_01_xsd.AbstractDa
            java.util.Calendar messageTimestamp,
            java.lang.String transactionId,
            int amount,
-           potopWSComProcessing_v_01_01_xsd.CurrencyType currency,
-           potopWSComProcessing_v_01_01_xsd.OperatorCodeType operatorCode,
+           cz.monetplus.gpe.potop.xsd.CurrencyType currency,
+           cz.monetplus.gpe.potop.xsd.OperatorCodeType operatorCode,
            java.lang.String targetMsisdn,
            java.lang.String sourceMsisdn) {
         super(
@@ -89,7 +89,7 @@ public class ValidationData  extends potopWSComProcessing_v_01_01_xsd.AbstractDa
      * 
      * @return currency
      */
-    public potopWSComProcessing_v_01_01_xsd.CurrencyType getCurrency() {
+    public cz.monetplus.gpe.potop.xsd.CurrencyType getCurrency() {
         return currency;
     }
 
@@ -99,7 +99,7 @@ public class ValidationData  extends potopWSComProcessing_v_01_01_xsd.AbstractDa
      * 
      * @param currency
      */
-    public void setCurrency(potopWSComProcessing_v_01_01_xsd.CurrencyType currency) {
+    public void setCurrency(cz.monetplus.gpe.potop.xsd.CurrencyType currency) {
         this.currency = currency;
     }
 
@@ -109,7 +109,7 @@ public class ValidationData  extends potopWSComProcessing_v_01_01_xsd.AbstractDa
      * 
      * @return operatorCode
      */
-    public potopWSComProcessing_v_01_01_xsd.OperatorCodeType getOperatorCode() {
+    public cz.monetplus.gpe.potop.xsd.OperatorCodeType getOperatorCode() {
         return operatorCode;
     }
 
@@ -119,7 +119,7 @@ public class ValidationData  extends potopWSComProcessing_v_01_01_xsd.AbstractDa
      * 
      * @param operatorCode
      */
-    public void setOperatorCode(potopWSComProcessing_v_01_01_xsd.OperatorCodeType operatorCode) {
+    public void setOperatorCode(cz.monetplus.gpe.potop.xsd.OperatorCodeType operatorCode) {
         this.operatorCode = operatorCode;
     }
 
