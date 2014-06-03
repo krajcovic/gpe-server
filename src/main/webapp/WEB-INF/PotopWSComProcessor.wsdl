@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:impl="urn:PotopWSComProcessor" xmlns:intf="urn:PotopWSComProcessor" xmlns:tns2="urn:potopWSComProcessing_v_01_01_xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PotopWSComProcessor">
+<wsdl:definitions xmlns:impl="urn:PotopWSComProcessor" xmlns:intf="urn:PotopWSComProcessor" xmlns:tns2="urn:cz.monetplus.gpe.potop.xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PotopWSComProcessor">
   <wsdl:types>
-    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:potopWSComProcessing_v_01_01_xsd">
+    <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:cz.monetplus.gpe.potop.xsd">
       <simpleType name="tidType">
         <restriction base="xsd:string">
           <pattern value="\w+"/>
@@ -146,7 +146,7 @@
       </complexType>
     </schema>
     <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:PotopWSComProcessor">
-      <import namespace="urn:potopWSComProcessing_v_01_01_xsd"/>
+      <import namespace="urn:cz.monetplus.gpe.potop.xsd"/>
       <element name="validateResponse">
         <complexType>
           <sequence>

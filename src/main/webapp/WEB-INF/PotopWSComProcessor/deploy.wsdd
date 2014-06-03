@@ -15,39 +15,40 @@
   <service name="PotopWSComProcessor" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="urn:PotopWSComProcessor"/>
       <parameter name="wsdlServiceElement" value="PotopWSComProcessingService"/>
-      <parameter name="schemaUnqualified" value="urn:PotopWSComProcessor,urn:potopWSComProcessing_v_01_01_xsd"/>
+      <parameter name="schemaUnqualified" value="urn:PotopWSComProcessor,urn:cz.monetplus.gpe.potop.xsd"/>
       <parameter name="wsdlServicePort" value="PotopWSComProcessor"/>
-      <parameter name="className" value="PotopWSComProcessor.PotopWSComProcessorSoapBindingSkeleton"/>
+      <parameter name="className" value="cz.monetplus.gpe.potop.PotopWSComProcessorSoapBindingSkeleton"/>
       <parameter name="wsdlPortType" value="PotopWSComProcessorPort"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <parameter name="allowedMethods" value="*"/>
 
+        <!-- type="java:cz.monetplus.gpe.potop.xsd.CancellationData" -->
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:CancellationData"
-        type="java:potopWSComProcessing_v_01_01_xsd.CancellationData"
+        type="java:cz.monetplus.gpe.potop.xsd.CancellationData"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:AbstractResult"
-        type="java:potopWSComProcessing_v_01_01_xsd.AbstractResult"
+        type="java:cz.monetplus.gpe.potop.xsd.AbstractResult"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:ValidationResult"
-        type="java:potopWSComProcessing_v_01_01_xsd.ValidationResult"
+        type="java:cz.monetplus.gpe.potop.xsd.ValidationResult"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:msisdnType"
         type="java:java.lang.String"
         serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
@@ -55,7 +56,7 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:amountType"
         type="java:int"
         serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
@@ -63,7 +64,7 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:tidType"
         type="java:java.lang.String"
         serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
@@ -71,23 +72,23 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:StatusResult"
-        type="java:potopWSComProcessing_v_01_01_xsd.StatusResult"
+        type="java:cz.monetplus.gpe.potop.xsd.StatusResult"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:SubmissionData"
-        type="java:potopWSComProcessing_v_01_01_xsd.SubmissionData"
+        type="java:cz.monetplus.gpe.potop.xsd.SubmissionData"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:cancelTypeType"
         type="java:int"
         serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
@@ -95,7 +96,7 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:paymentTypeType"
         type="java:int"
         serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
@@ -103,31 +104,31 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:currencyType"
-        type="java:potopWSComProcessing_v_01_01_xsd.CurrencyType"
+        type="java:cz.monetplus.gpe.potop.xsd.CurrencyType"
         serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:CancellationResult"
-        type="java:potopWSComProcessing_v_01_01_xsd.CancellationResult"
+        type="java:cz.monetplus.gpe.potop.xsd.CancellationResult"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:SubmissionResult"
-        type="java:potopWSComProcessing_v_01_01_xsd.SubmissionResult"
+        type="java:cz.monetplus.gpe.potop.xsd.SubmissionResult"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:transactionIdType"
         type="java:java.lang.String"
         serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
@@ -135,33 +136,33 @@
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:StatusData"
-        type="java:potopWSComProcessing_v_01_01_xsd.StatusData"
+        type="java:cz.monetplus.gpe.potop.xsd.StatusData"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:AbstractData"
-        type="java:potopWSComProcessing_v_01_01_xsd.AbstractData"
+        type="java:cz.monetplus.gpe.potop.xsd.AbstractData"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:ValidationData"
-        type="java:potopWSComProcessing_v_01_01_xsd.ValidationData"
+        type="java:cz.monetplus.gpe.potop.xsd.ValidationData"
         serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
         encodingStyle=""
       />
       <typeMapping
-        xmlns:ns="urn:potopWSComProcessing_v_01_01_xsd"
+        xmlns:ns="urn:cz.monetplus.gpe.potop.xsd"
         qname="ns:operatorCodeType"
-        type="java:potopWSComProcessing_v_01_01_xsd.OperatorCodeType"
+        type="java:cz.monetplus.gpe.potop.xsd.OperatorCodeType"
         serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
         deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
         encodingStyle=""
